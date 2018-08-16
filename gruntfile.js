@@ -55,6 +55,10 @@ module.exports = function(grunt){
         },
         uglify: {
           dev: {
+            options: {
+              mangle: false,
+              sourceMap: true
+            },
             files: {
               'dev/app.js': [
                 'dev/js/test1.js',
@@ -63,6 +67,9 @@ module.exports = function(grunt){
             }
           },
           docs: {
+            options: {
+              mangle: false
+            },
             files: {
               'docs/app.js': [
                 'dev/js/test1.js',
@@ -74,7 +81,7 @@ module.exports = function(grunt){
 
         watch: {
 		       options: {
-      		        livereload: true,
+  		        livereload: true,
 	        },
             html: {
                 files: ['**/*.html']
