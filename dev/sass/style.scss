@@ -1,0 +1,19 @@
+$blue: blue;
+$white: white;
+
+$primary:$white ;
+$secondary:$blue;
+$background: $white;
+
+
+@import "reset";
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: $background;
+}
+
+img {
+  max-width: 500px;
+}

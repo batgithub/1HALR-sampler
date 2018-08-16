@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: white; }
+
+img {
+  max-width: 500px; }
+
+/*# sourceMappingURL=style.css.map */
