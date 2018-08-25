@@ -1,3 +1,4 @@
+@import "base/fonts";
 $blue: blue;
 $white: white;
 
@@ -5,15 +6,20 @@ $primary:$white ;
 $secondary:$blue;
 $background: $white;
 
+$radius: 6px;
 
-@import "reset";
+$font: 'signika', helvetica, arial, sans-serif;
+@import "base/reset";
+@import "layout/home";
+@import  "teamsMenu";
+
+
+
+
 
 body {
   display: flex;
   flex-direction: column;
   background: $background;
-}
-
-img {
-  max-width: 500px;
+  font-family: $font;
 }

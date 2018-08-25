@@ -1,0 +1,39 @@
+.team {
+  background-blend-mode: multiply;
+  color: white;
+  text-transform: uppercase;
+
+}
+.team.seb {
+  border-radius: $radius 0 0 0 ;
+  background: url('src/imgs/teamSeb.png'),linear-gradient( to right,  #F81EFA, #805EFD);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+
+  @media (max-width: 600px) {
+    /* On mobile */
+    border-radius: $radius $radius 0 0 ;
+    background: url('src/imgs/teamSeb.png'),linear-gradient( to bottom,  #F81EFA, #805EFD);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+
+}
+.team.mag {
+  border-radius:  0 $radius 0 0 ;
+  background: url('src/imgs/teamMag.png'),linear-gradient( to right,   #805EFD, #0C9DFF );
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+
+  @media (max-width: 600px) {
+    /* On mobile */
+    border-radius:  0 0 0 0 ;
+    background: url('src/imgs/teamMag.png'),linear-gradient( to bottom, #805EFD, #0C9DFF);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+}
