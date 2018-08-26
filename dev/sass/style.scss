@@ -12,6 +12,8 @@ $font: 'signika', helvetica, arial, sans-serif;
 @import "base/reset";
 @import "layout/home";
 @import  "teamsMenu";
+@import  "header";
+@import  "pop";
 
 
 
@@ -22,4 +24,5 @@ body {
   flex-direction: column;
   background: $background;
   font-family: $font;
+  box-sizing: border-box;
 }

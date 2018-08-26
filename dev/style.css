@@ -13,41 +13,51 @@ html, body {
   padding: 0; }
 
 body {
-  height: 100vh; }
+  height: 100vh;
+  box-sizing: border-box; }
 
 header {
   display: flex;
   flex-direction: column;
-  height: 8em;
+  justify-content: center;
   width: 100%;
-  text-align: center; }
+  box-sizing: border-box; }
 
 main {
-  height: calc( 100% - 8em); }
+  height: 500px;
+  box-sizing: border-box; }
   main .container {
     display: flex;
-    height: 100%; }
+    height: 100%;
+    box-sizing: border-box; }
     main .container .team {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 50%;
-      height: 100%; }
+      box-sizing: border-box; }
     @media (max-width: 600px) {
       main .container {
         /* On mobile */
-        flex-direction: column; }
-        main .container .team {
-          width: 100%; } }
+        flex-direction: column; } }
 
 .team {
-  background-blend-mode: multiply;
   color: white;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  background-blend-mode: multiply;
+  border-radius: 6px;
+  width: 50%;
+  height: 100%; }
+  .team:hover {
+    background-size: contain;
+    cursor: pointer; }
+  @media (max-width: 600px) {
+    .team {
+      /* On mobile */
+      width: auto; } }
 
 .team.seb {
-  border-radius: 6px 0 0 0;
+  margin: 0 .5em 0 1em;
   background: url("src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
   background-repeat: no-repeat;
   background-position: top right;
@@ -55,14 +65,14 @@ main {
   @media (max-width: 600px) {
     .team.seb {
       /* On mobile */
-      border-radius: 6px 6px 0 0;
+      margin: 0 1em .5em 1em;
       background: url("src/imgs/teamSeb.png"), linear-gradient(to bottom, #F81EFA, #805EFD);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover; } }
 
 .team.mag {
-  border-radius: 0 6px 0 0;
+  margin: 0 1em 0 .5em;
   background: url("src/imgs/teamMag.png"), linear-gradient(to right, #805EFD, #0C9DFF);
   background-repeat: no-repeat;
   background-position: top left;
@@ -70,16 +80,33 @@ main {
   @media (max-width: 600px) {
     .team.mag {
       /* On mobile */
-      border-radius: 0 0 0 0;
+      margin: .5em 1em 0 1em;
       background: url("src/imgs/teamMag.png"), linear-gradient(to bottom, #805EFD, #0C9DFF);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover; } }
 
+header {
+  padding: 1em; }
+  header h1.title {
+    margin: 0; }
+  header p.sub {
+    margin: 0; }
+
+.pop {
+  display: none;
+  position: absolute;
+  background: url("src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  background-blend-mode: multiply; }
+
 body {
   display: flex;
   flex-direction: column;
   background: white;
-  font-family: "signika", helvetica, arial, sans-serif; }
+  font-family: "signika", helvetica, arial, sans-serif;
+  box-sizing: border-box; }
 
 /*# sourceMappingURL=style.css.map */

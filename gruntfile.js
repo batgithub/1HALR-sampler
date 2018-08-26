@@ -62,7 +62,6 @@ module.exports = function(grunt){
             files: {
               'dev/app.js': [
                 'dev/js/test1.js',
-                'dev/js/test2.js'
               ]
             }
           },
@@ -73,7 +72,6 @@ module.exports = function(grunt){
             files: {
               'docs/app.js': [
                 'dev/js/test1.js',
-                'dev/js/test2.js'
               ]
             }
           }
@@ -93,7 +91,7 @@ module.exports = function(grunt){
             },
             js: {
               files: ['dev/js/**/*.js'],
-              task: ['uglify:dev']
+              tasks: ['uglify:dev']
             },
             grunt: {
                 files: ['gruntfile.js'],
