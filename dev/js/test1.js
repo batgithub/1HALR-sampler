@@ -12,7 +12,7 @@ console.log("aaaadazzml");
 
 teamSeb.click(function(){
   $( "#sebPop" ).css({
-    display:'block',
+    opacity:'1',
     height:height,
     width: width,
     zIndex: '1000',
@@ -23,7 +23,8 @@ teamSeb.click(function(){
     top:'0',
     left:'0',
     width:'100%',
-    height:'100%'
+    height:'100%',
+    opacity:'1'
   },300)
 })
 
