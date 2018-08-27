@@ -1,9 +1,24 @@
 .pop {
   opacity: 0;
-  position: absolute;
-  background: url('src/imgs/teamSeb.png'),linear-gradient( to right,  #F81EFA, #805EFD);
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: cover;
-  background-blend-mode: multiply;
+  z-index: -1000;
+  width: 0;
+  height: 0;
+  position: fixed;
+  
+
+  .header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+    .title {
+
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+
 }

@@ -13,7 +13,6 @@ html, body {
   padding: 0; }
 
 body {
-  height: 100vh;
   box-sizing: border-box; }
 
 header {
@@ -42,34 +41,37 @@ main {
         flex-direction: column; } }
 
 .team {
-  color: white;
-  text-transform: uppercase;
   background-blend-mode: multiply;
   border-radius: 6px;
   width: 50%;
   height: 100%; }
   .team:hover {
-    background-size: contain;
     cursor: pointer; }
   @media (max-width: 600px) {
     .team {
       /* On mobile */
       width: auto; } }
 
-.team.seb {
-  margin: 0 .5em 0 1em;
+.bg-seb {
+  background-blend-mode: multiply;
   background: url("src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover; }
   @media (max-width: 600px) {
-    .team.seb {
+    .bg-seb {
       /* On mobile */
-      margin: 0 1em .5em 1em;
       background: url("src/imgs/teamSeb.png"), linear-gradient(to bottom, #F81EFA, #805EFD);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover; } }
+
+.team.seb {
+  margin: 0 .5em 0 1em; }
+  @media (max-width: 600px) {
+    .team.seb {
+      /* On mobile */
+      margin: 0 1em .5em 1em; } }
 
 .team.mag {
   margin: 0 1em 0 .5em;
@@ -95,12 +97,19 @@ header {
 
 .pop {
   opacity: 0;
-  position: absolute;
-  background: url("src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: cover;
-  background-blend-mode: multiply; }
+  z-index: -1000;
+  width: 0;
+  height: 0;
+  position: fixed; }
+  .pop .header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em; }
+    .pop .header img {
+      cursor: pointer; }
 
 body {
   display: flex;
@@ -108,5 +117,9 @@ body {
   background: white;
   font-family: "signika", helvetica, arial, sans-serif;
   box-sizing: border-box; }
+
+h2.title.white {
+  color: white;
+  text-transform: uppercase; }
 
 /*# sourceMappingURL=style.css.map */

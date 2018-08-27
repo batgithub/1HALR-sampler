@@ -1,23 +1,27 @@
 var teamSeb = $( "#teamSeb" );
-var position = teamSeb.position();
-var width = teamSeb.outerWidth();
-var height = teamSeb.outerHeight();
-var margin = teamSeb.css("marginLeft");
+var position
+var width
+var height
+var margin
+var titlePosition
 
-console.log(position);
-console.log(width);
-console.log(height);
-console.log(margin);
-console.log("aaaadazzml");
 
 teamSeb.click(function(){
+  position = teamSeb.position();
+  width = teamSeb.outerWidth();
+  height = teamSeb.outerHeight();
+  margin = teamSeb.css("marginLeft");
+  titlePosition = $( "#titleSeb" ).position();
+
   $( "#sebPop" ).css({
     opacity:'1',
     height:height,
     width: width,
     zIndex: '1000',
-    top: position.top,
+    top: teamSeb.offset().top - $(window).scrollTop(),
     left: position.left + margin
+  })
+  $( "#titlePop" ).css({
   })
   $( "#sebPop" ).animate({
     top:'0',
@@ -28,6 +32,25 @@ teamSeb.click(function(){
   },300)
 })
 
+$( "#closePop" ).click(function(){
+  console.log("click close");
+  $( "#sebPop" ).animate({
+    top: teamSeb.offset().top - $(window).scrollTop(),
+    left: position.left + margin,
+    height:height,
+    width: width,
+    zIndex:'-1000'
+  },300)
+
+  setTimeout(
+    function()
+    {
+      $( "#sebPop" ).css({
+        opacity:'0'
+      })
+  }, 300);
+
+})
 
 function loader() {
     $("button").each(
