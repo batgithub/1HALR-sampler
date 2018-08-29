@@ -1,56 +1,55 @@
-var teamSeb = $( "#teamSeb" );
-var position
-var width
-var height
-var margin
-var titlePosition
+toggleSamplePage('#teamSeb','#closePopSeb','#sebPop')
+toggleSamplePage('#teamMag','#closePopMag','#magPop')
+function toggleSamplePage(idClickStart, idClickClose, idPopup){
+  var elmClickable = $(idClickStart);
+  var position
+  var width
+  var height
+  var margin
+  elmClickable.click(function(){
+    position = elmClickable.position();
+    width = elmClickable.outerWidth();
+    height = elmClickable.outerHeight();
+    margin = elmClickable.css("marginLeft");
 
 
-teamSeb.click(function(){
-  position = teamSeb.position();
-  width = teamSeb.outerWidth();
-  height = teamSeb.outerHeight();
-  margin = teamSeb.css("marginLeft");
-  titlePosition = $( "#titleSeb" ).position();
+    $( idPopup ).css({
+      opacity:'1',
+      height:height,
+      width: width,
+      zIndex: '1000',
+      top: elmClickable.offset().top - $(window).scrollTop(),
+      left: position.left + margin
+    })
 
-  $( "#sebPop" ).css({
-    opacity:'1',
-    height:height,
-    width: width,
-    zIndex: '1000',
-    top: teamSeb.offset().top - $(window).scrollTop(),
-    left: position.left + margin
+    $(idPopup).animate({
+      top:'0',
+      left:'0',
+      width:'100%',
+      height:'100%',
+      opacity:'1'
+    },300)
   })
-  $( "#titlePop" ).css({
+
+  $( idClickClose ).click(function(){
+    $(idPopup).animate({
+      top: elmClickable.offset().top - $(window).scrollTop(),
+      left: position.left + margin,
+      height:height,
+      width: width,
+      zIndex:'-1000'
+    },300)
+
+    setTimeout(
+      function(){
+        $(idPopup).css({
+          opacity:'0'
+        })
+    }, 300);
+
   })
-  $( "#sebPop" ).animate({
-    top:'0',
-    left:'0',
-    width:'100%',
-    height:'100%',
-    opacity:'1'
-  },300)
-})
 
-$( "#closePop" ).click(function(){
-  console.log("click close");
-  $( "#sebPop" ).animate({
-    top: teamSeb.offset().top - $(window).scrollTop(),
-    left: position.left + margin,
-    height:height,
-    width: width,
-    zIndex:'-1000'
-  },300)
-
-  setTimeout(
-    function()
-    {
-      $( "#sebPop" ).css({
-        opacity:'0'
-      })
-  }, 300);
-
-})
+}
 
 function loader() {
     $("button").each(

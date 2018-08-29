@@ -73,20 +73,26 @@ main {
       /* On mobile */
       margin: 0 1em .5em 1em; } }
 
-.team.mag {
-  margin: 0 1em 0 .5em;
+.bg-mag {
+  background-blend-mode: multiply;
   background: url("src/imgs/teamMag.png"), linear-gradient(to right, #805EFD, #0C9DFF);
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: top right;
   background-size: cover; }
   @media (max-width: 600px) {
-    .team.mag {
+    .bg-mag {
       /* On mobile */
-      margin: .5em 1em 0 1em;
       background: url("src/imgs/teamMag.png"), linear-gradient(to bottom, #805EFD, #0C9DFF);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover; } }
+
+.team.mag {
+  margin: 0 1em 0 .5em; }
+  @media (max-width: 600px) {
+    .team.mag {
+      /* On mobile */
+      margin: .5em 1em 0 1em; } }
 
 header {
   padding: 1em; }
