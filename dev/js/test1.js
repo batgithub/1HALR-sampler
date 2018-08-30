@@ -12,8 +12,6 @@ function toggleSamplePage(idClickStart, idClickClose, idPopup){
     height = elmClickable.outerHeight();
     margin =  parseFloat(elmClickable.css("marginLeft"))
 
-
-
     $( idPopup ).css({
       opacity:'1',
       height:height,
@@ -43,9 +41,14 @@ function toggleSamplePage(idClickStart, idClickClose, idPopup){
 
     setTimeout(
       function(){
-        $(idPopup).css({
-          opacity:'0'
-        })
+      $(idPopup).removeAttr("style")
+      $(idPopup).css({
+        opacity:'',
+        top:'',
+        left:'',
+        width:'',
+        height:'',
+      })
     }, 300);
 
   })
