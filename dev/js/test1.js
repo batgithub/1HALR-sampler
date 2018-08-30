@@ -10,7 +10,8 @@ function toggleSamplePage(idClickStart, idClickClose, idPopup){
     position = elmClickable.position();
     width = elmClickable.outerWidth();
     height = elmClickable.outerHeight();
-    margin = elmClickable.css("marginLeft");
+    margin =  parseFloat(elmClickable.css("marginLeft"))
+
 
 
     $( idPopup ).css({
