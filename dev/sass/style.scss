@@ -11,9 +11,11 @@ $radius: 6px;
 $font: 'signika', helvetica, arial, sans-serif;
 @import "base/reset";
 @import "layout/home";
+@import "layout/popup";
 @import  "teamsMenu";
 @import  "header";
 @import  "pop";
+@import  "buttons";
 
 
 
@@ -25,6 +27,8 @@ body {
   background: $background;
   font-family: $font;
   box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 h2.title.white {

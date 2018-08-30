@@ -40,6 +40,23 @@ main {
         /* On mobile */
         flex-direction: column; } }
 
+.pop {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+  .pop .header {
+    opacity: 0;
+    padding-top: 1em; }
+  .pop .sounds {
+    opacity: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 6em 1em 1em; }
+    .pop .sounds .button {
+      display: flex;
+      align-self: flex-start; }
+
 .team {
   background-blend-mode: multiply;
   border-radius: 6px;
@@ -102,27 +119,48 @@ header {
     margin: 0; }
 
 .pop {
-  opacity: 0;
   z-index: -1000;
   width: 0;
   height: 0;
   position: fixed; }
   .pop .header {
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
-    padding: 1em; }
+    padding: 1em;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    opacity: 0; }
     .pop .header img {
       cursor: pointer; }
+
+.button {
+  padding: 1em 1.3em 1em 1em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em; }
+  .button:hover {
+    cursor: pointer; }
+  .button::before {
+    content: url("src/imgs/play.svg");
+    width: .8em;
+    margin-right: .8em; }
+
+.button.active::before {
+  content: url("src/imgs/stop.svg"); }
 
 body {
   display: flex;
   flex-direction: column;
   background: white;
   font-family: "signika", helvetica, arial, sans-serif;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400; }
 
 h2.title.white {
   color: white;

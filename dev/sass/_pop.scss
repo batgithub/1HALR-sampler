@@ -1,18 +1,20 @@
 .pop {
-  opacity: 0;
   z-index: -1000;
   width: 0;
   height: 0;
   position: fixed;
-  
+
 
   .header {
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
     padding: 1em;
+    background: linear-gradient(rgba(black,.6),rgba(black,0));
+    opacity: 0;
+
     .title {
 
     }

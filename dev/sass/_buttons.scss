@@ -1,0 +1,24 @@
+.button {
+  padding: 1em 1.3em 1em 1em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  background: white;
+  border: none;
+  border-radius: $radius;
+  font-size: 1em;
+  &:hover {
+    cursor: pointer;
+  }
+  &::before {
+    content: url('src/imgs/play.svg');
+    width: .8em;
+    margin-right: .8em;
+  }
+}
+
+.button.active {
+
+  &::before {
+    content: url('src/imgs/stop.svg');
+  }
+}

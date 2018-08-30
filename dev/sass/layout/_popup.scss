@@ -1,0 +1,20 @@
+.pop {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  .header {
+      opacity: 0;
+      padding-top: 1em;
+  }
+  .sounds {
+    opacity: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 6em 1em 1em;
+    .button {
+      display: flex;
+      align-self:flex-start;
+    }
+  }
+}
