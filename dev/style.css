@@ -48,11 +48,21 @@ main {
     padding-top: 1em; }
   .pop .sounds {
     opacity: 0;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-content: flex-start;
-    padding: 6em 1em 1em; }
+    display: flex; }
+    @media (max-width: 600px) {
+      .pop .sounds {
+        /* On mobile */
+        justify-content: flex-start;
+        flex-direction: column;
+        align-content: flex-start;
+        padding: 6em 1em 1em; } }
+    @media (min-width: 601px) {
+      .pop .sounds {
+        /* On desktop */
+        flex-wrap: wrap;
+        padding: 6em 0em; }
+        .pop .sounds .button {
+          margin: .5em 1em; } }
     .pop .sounds .button {
       display: flex;
       align-self: flex-start; }
