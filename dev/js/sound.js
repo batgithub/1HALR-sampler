@@ -37,8 +37,12 @@ function createButtonSound(iT, idContainer){
   var audio = '<audio preload="auto" id="sound-'+iT+'"><source src="'+ file +'.mp3"></audio>';
   $(idContainer).append(buttonStart+sounds[iT].name+audio+buttonEnd)
 
+  $('#'+idSound).on('canplaythrough', function() {
+    $(this).parent().removeClass("loading")
+    $(this).parent().addClass("play")
+  });
 
-  $('#'+idSound)[0].oncanplaythrough = function() {
+  if ($('#'+idSound)[0].readyState > 3) {
     $(this).parent().removeClass("loading")
     $(this).parent().addClass("play")
   }
