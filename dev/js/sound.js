@@ -1,5 +1,5 @@
 // Init var
-var pathSounds = "src/audio/"
+var pathSounds = "./src/audio/"
 var animationDuration = 300
 var sounds = [
     //MAG
@@ -39,15 +39,11 @@ function createButtonSound(iT, idContainer){
 
 
   $('#'+idSound)[0].oncanplaythrough = function() {
-    console.log('ready');
-    console.log($(this).parent());
     $(this).parent().removeClass("loading")
     $(this).parent().addClass("play")
   }
 
 }
-
-
 
 
 
