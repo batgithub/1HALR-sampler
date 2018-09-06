@@ -114,14 +114,14 @@ main {
 
 .bg-seb {
   background-blend-mode: multiply;
-  background: url("src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
+  background: url("./src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover; }
   @media (max-width: 600px) {
     .bg-seb {
       /* On mobile */
-      background: url("src/imgs/teamSeb.png"), linear-gradient(to bottom, #F81EFA, #805EFD);
+      background: url("./src/imgs/teamSeb.png"), linear-gradient(to bottom, #F81EFA, #805EFD);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover; } }
@@ -135,14 +135,14 @@ main {
 
 .bg-mag {
   background-blend-mode: multiply;
-  background: url("src/imgs/teamMag.png"), linear-gradient(to right, #805EFD, #0C9DFF);
+  background: url("./src/imgs/teamMag.png"), linear-gradient(to right, #805EFD, #0C9DFF);
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover; }
   @media (max-width: 600px) {
     .bg-mag {
       /* On mobile */
-      background: url("src/imgs/teamMag.png"), linear-gradient(to bottom, #805EFD, #0C9DFF);
+      background: url("./src/imgs/teamMag.png"), linear-gradient(to bottom, #805EFD, #0C9DFF);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover; } }
