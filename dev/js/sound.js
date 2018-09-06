@@ -14,8 +14,15 @@ var sounds = [
     {name:'Trois quatre',file: 'SEB-trois-quatre',team:'seb'}
 ]
 
+//preload imgs
+var imgStop = new Image();
+imgStop.src = './src/imgs/stop.svg';
+
+var imgPlay = new Image();
+imgPlay.src = './src/imgs/play.svg';
 
 
+//generate DOM buttons
 for (var i = 0, len = sounds.length; i < len; i++) {
   if(sounds[i].team == "mag"){
     createButtonSound(i, "#magPop .sounds")
