@@ -1,22 +1,3 @@
-var pathSounds = "src/audio/"
-var animationDuration = 300
-var sounds = [
-    {name:'le nom du son',path: pathSounds+'sdound',team:'mag'},
-    {name:'le nom du son2',path:pathSounds+'sdound',team:'mag'},
-    {name:'le nom du son3',path:pathSounds+'sdound',team:'seb'},
-    {name:'le nom du son4',path:pathSounds+'sdound',team:'seb'}
-]
-
-for (var i = 0, len = sounds.length; i < len; i++) {
-  if(sounds[i].team == "mag"){
-    console.log(sounds[i].path+" team mag");
-  }else if(sounds[i].team == "seb"){
-    console.log(sounds[i].path+" team seb");
-  }else {
-    console.log("team not find");
-  }
-
-}
 
 
 toggleSamplePage('#teamSeb','#closePopSeb','#sebPop')
@@ -93,34 +74,5 @@ function toggleSamplePage(idClickStart, idClickClose, idPopup){
     }, animationDuration+10);
 
   })
-
-}
-
-function loader() {
-    $("button").each(
-        function(){
-            var file = $(this).data('file');
-            var audio = '<audio preload="auto" id="'+file +'"><source src="./src/audio/'+ file +'.mp3"><span>'+ +'</span></audio>';
-            var dure = '<span>'+ $('#'+ file)+'</span>';
-
-            var b = $('#'+ file);
-
-            $(this).append(audio);
-        }
-
-    )
-}
-
-function playSound(id) {
-
-    var audioClick = $('#'+ id)[0];
-    var duration = (audioClick.duration)*1000;
-
-    audioClick.play();
-    audioClick.onplaying=function(){
-        $(audioClick).parent().addClass( "active" );
-    };
-
-    setTimeout(function(){ $(audioClick).parent().removeClass( "active" );}, duration);
 
 }

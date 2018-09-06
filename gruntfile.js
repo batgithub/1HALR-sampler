@@ -61,7 +61,9 @@ module.exports = function(grunt){
             },
             files: {
               'dev/app.js': [
-                'dev/js/test1.js',
+                'dev/js/jquery.js',
+                'dev/js/popup.js',
+                'dev/js/sound.js'
               ]
             }
           },
@@ -71,7 +73,9 @@ module.exports = function(grunt){
             },
             files: {
               'docs/app.js': [
-                'dev/js/test1.js',
+                'dev/js/jquery.js',
+                'dev/js/popup.js',
+                'dev/js/sound.js'
               ]
             }
           }
