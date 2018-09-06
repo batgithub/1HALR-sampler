@@ -1,6 +1,214 @@
+@font-face {
+  font-family: 'signika';
+  src: url("src/fonts/signika-regular.woff2") format("woff2"), url("src/fonts/signika-regular.woff") format("woff"), url("src/fonts/signika-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: 'signika';
+  src: url("src/fonts/signika-bold.woff2") format("woff2"), url("src/fonts/signika-bold.woff") format("woff"), url("src/fonts/signika-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
 html, body {
   margin: 0;
   padding: 0; }
+
+body {
+  box-sizing: border-box; }
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  box-sizing: border-box; }
+
+main {
+  height: 500px;
+  box-sizing: border-box; }
+  main .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    box-sizing: border-box; }
+    main .container .team {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      box-sizing: border-box; }
+    @media (max-width: 600px) {
+      main .container {
+        /* On mobile */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
+
+.pop {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+  .pop .header {
+    opacity: 0;
+    padding-top: 1em; }
+  .pop .sounds {
+    opacity: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    @media (max-width: 600px) {
+      .pop .sounds {
+        /* On mobile */
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+        padding: 6em 1em 1em; } }
+    @media (min-width: 601px) {
+      .pop .sounds {
+        /* On desktop */
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        padding: 6em 0em; }
+        .pop .sounds .button {
+          margin: .5em 1em; } }
+    .pop .sounds .button {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-item-align: start;
+          align-self: flex-start; }
+
+.team {
+  background-blend-mode: multiply;
+  border-radius: 6px;
+  width: 50%;
+  height: 100%; }
+  .team:hover {
+    cursor: pointer; }
+  @media (max-width: 600px) {
+    .team {
+      /* On mobile */
+      width: auto; } }
+
+.bg-seb {
+  background-blend-mode: multiply;
+  background: url("src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover; }
+  @media (max-width: 600px) {
+    .bg-seb {
+      /* On mobile */
+      background: url("src/imgs/teamSeb.png"), linear-gradient(to bottom, #F81EFA, #805EFD);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover; } }
+
+.team.seb {
+  margin: 0 .5em 0 1em; }
+  @media (max-width: 600px) {
+    .team.seb {
+      /* On mobile */
+      margin: 0 1em .5em 1em; } }
+
+.bg-mag {
+  background-blend-mode: multiply;
+  background: url("src/imgs/teamMag.png"), linear-gradient(to right, #805EFD, #0C9DFF);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover; }
+  @media (max-width: 600px) {
+    .bg-mag {
+      /* On mobile */
+      background: url("src/imgs/teamMag.png"), linear-gradient(to bottom, #805EFD, #0C9DFF);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover; } }
+
+.team.mag {
+  margin: 0 1em 0 .5em; }
+  @media (max-width: 600px) {
+    .team.mag {
+      /* On mobile */
+      margin: .5em 1em 0 1em; } }
+
+header {
+  padding: 1em; }
+  header h1.title {
+    margin: 0; }
+  header p.sub {
+    margin: 0; }
+
+.pop {
+  z-index: -1000;
+  width: 0;
+  height: 0;
+  position: fixed; }
+  .pop .header {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    opacity: 0; }
+    .pop .header img {
+      cursor: pointer; }
+
+.button {
+  padding: 1em 1.3em 1em 1em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em; }
+  .button:hover {
+    cursor: pointer; }
+  .button::before {
+    width: .8em;
+    margin-right: .8em; }
+
+.button.play::before {
+  content: url("src/imgs/play.svg"); }
+
+.button.active::before {
+  content: url("src/imgs/stop.svg"); }
+
+.button.loading::before {
+  display: inline-block;
+  content: '';
+  background: url("src/imgs/loading.gif") no-repeat 0 0;
+  background-size: 100%;
+  width: 1.2em;
+  height: 1.2em; }
 
 body {
   display: -webkit-box;
@@ -10,7 +218,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: white; }
+  background: white;
+  font-family: "signika", helvetica, arial, sans-serif;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400; }
 
-img {
-  max-width: 500px; }
+h2.title.white {
+  color: white;
+  text-transform: uppercase; }

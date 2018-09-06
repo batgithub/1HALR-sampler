@@ -2,9 +2,15 @@
 var pathSounds = "src/audio/"
 var animationDuration = 300
 var sounds = [
-    {name:'le nom du son',file:'mariannerireMoyen',team:'mag'},
-    {name:'tu me plait',file: 'MAG-tu-me-plait',team:'mag'},
-    {name:'le nom du son3',file: 'mariannerireMoyen',team:'seb'},
+    //MAG
+    {name:'oui',file:'MAG-oui',team:'mag'},
+    {name:'tu me plaiiiiiiiiiiiiiiiiiit',file: 'MAG-tu-me-plait',team:'mag'},
+    {name:'Haaaaa ha',file: 'MAG-rire-ha-ha',team:'mag'},
+    {name:'aaaaaheeeuuuu',file: 'MAG-aaaaaheeeuuuu',team:'mag'},
+    {name:'rire aspiré',file: 'MAG-rire-aspire',team:'mag'},
+    {name:'J\'ai changé de raie',file: 'MAG-jai-change-de-raie',team:'mag'},
+    // SEB
+    {name:'mmmmmmmmm',file: 'SEB-mmmmmmmmm',team:'seb'},
     {name:'Trois quatre',file: 'SEB-trois-quatre',team:'seb'}
 ]
 
@@ -20,19 +26,29 @@ for (var i = 0, len = sounds.length; i < len; i++) {
   }else {
     console.log("team not find");
   }
-
 }
 
 
 function createButtonSound(iT, idContainer){
   var idSound = "sound-"+i
-  var buttonStart = '<button class="button" onclick="playSound(\''+idSound+'\')">'
+  var buttonStart = '<button class="button loading" onclick="playSound(\''+idSound+'\')">'
   var buttonEnd = '</button>'
   var file = pathSounds+sounds[iT].file
   var audio = '<audio preload="auto" id="sound-'+iT+'"><source src="'+ file +'.mp3"></audio>';
-
   $(idContainer).append(buttonStart+sounds[iT].name+audio+buttonEnd)
+
+
+  $('#'+idSound)[0].oncanplaythrough = function() {
+    console.log('ready');
+    console.log($(this).parent());
+    $(this).parent().removeClass("loading")
+    $(this).parent().addClass("play")
+  }
+
 }
+
+
+
 
 
 function playSound(id) {

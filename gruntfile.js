@@ -95,7 +95,8 @@ module.exports = function(grunt){
             },
             js: {
               files: ['dev/js/**/*.js'],
-              tasks: ['uglify:dev']
+              tasks: ['uglify:dev'],
+              options: { spawn: false }
             },
             grunt: {
                 files: ['gruntfile.js'],

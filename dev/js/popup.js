@@ -1,5 +1,3 @@
-
-
 toggleSamplePage('#teamSeb','#closePopSeb','#sebPop')
 toggleSamplePage('#teamMag','#closePopMag','#magPop')
 function toggleSamplePage(idClickStart, idClickClose, idPopup){

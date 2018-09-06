@@ -10,15 +10,31 @@
     cursor: pointer;
   }
   &::before {
-    content: url('src/imgs/play.svg');
     width: .8em;
     margin-right: .8em;
   }
 }
 
-.button.active {
+.button.play {
+  &::before {
+    content: url('src/imgs/play.svg');
+  }
+}
 
+.button.active {
   &::before {
     content: url('src/imgs/stop.svg');
+  }
+}
+
+.button.loading{
+  &::before {
+    display: inline-block;
+    content:'';
+    background: url('src/imgs/loading.gif')no-repeat 0 0;
+    background-size: 100%;
+    width: 1.2em;
+    height: 1.2em;
+
   }
 }
