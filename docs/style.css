@@ -207,11 +207,11 @@ footer {
 .button {
   padding: 1em 1.3em 1em 1em;
   margin-bottom: 1em;
-  text-transform: uppercase;
   background: white;
   border: none;
   border-radius: 6px;
-  font-size: 1em; }
+  font-size: 1em;
+  text-align: left; }
   .button:hover {
     cursor: pointer; }
   .button::before {
