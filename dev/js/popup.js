@@ -21,13 +21,19 @@ function toggleSamplePage(idClickStart, idClickClose, idPopup){
       $( idPopup+' .header').css({
         position:'fixed'
       })
+      $( 'body' ).css({
+        position:'fixed',
+        width:'100%'
+      })
     }, animationDuration+10);
+
 
     $( idPopup ).css({
       opacity:'1',
       height:height,
       width: width,
       zIndex: '1000',
+      borderRadius: 6,
       top: elmClickable.offset().top - $(window).scrollTop(),
       left: position.left + margin
     })
@@ -37,40 +43,39 @@ function toggleSamplePage(idClickStart, idClickClose, idPopup){
       left:'0',
       width:'100%',
       height:'100%',
+      borderRadius: 0,
       opacity:'1'
     },animationDuration)
   })
 
 
+  $( idClickClose ).click(
+    function(){
+      $( idPopup+' .header').css({
+        position:'absolute'
+      })
+
+      $(idPopup).animate({
+        top: elmClickable.offset().top - $(window).scrollTop(),
+        left: position.left + margin,
+        height:height,
+        width: width,
+        borderRadius: 6,
+        zIndex:'-1000'
+      },animationDuration)
 
 
-  $( idClickClose ).click(function(){
-
-    $( idPopup+' .header').css({
-      position:'absolute'
-    })
+      $( idPopup+' .header,' + idPopup+ ' .sounds' ).animate({
+        opacity:'0'
+      },animationDuration)
 
 
-    $(idPopup).animate({
-      top: elmClickable.offset().top - $(window).scrollTop(),
-      left: position.left + margin,
-      height:height,
-      width: width,
-      zIndex:'-1000'
-    },animationDuration)
-
-
-    $( idPopup+' .header,' + idPopup+ ' .sounds' ).animate({
-      opacity:'0'
-    },animationDuration)
-
-
-    setTimeout(
-      function(){
-      $(idPopup).removeAttr("style")
-      $( idPopup+' .header'+ idPopup+ ' .sounds' ).removeAttr("style")
-    }, animationDuration+10);
-
-  })
-
+      setTimeout(
+        function(){
+        $(idPopup).removeAttr("style")
+        $( idPopup+' .header'+ idPopup+ ' .sounds' ).removeAttr("style")
+        $( 'body' ).removeAttr("style")
+      }, animationDuration+10);
+    }
+  )
 }
