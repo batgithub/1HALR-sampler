@@ -27,16 +27,25 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  text-align: center; }
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px; }
 
 main {
-  height: 500px;
   box-sizing: border-box; }
+  main .container.text {
+    padding: 1em;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
   main .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 100%;
     box-sizing: border-box; }
     main .container .team {
       display: -webkit-box;
@@ -52,6 +61,7 @@ main {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
+      height: 30em;
       box-sizing: border-box; }
     @media (max-width: 600px) {
       main .container {
@@ -59,7 +69,11 @@ main {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
-                flex-direction: column; } }
+                flex-direction: column;
+        height: 30em; } }
+
+footer {
+  text-align: center; }
 
 .pop {
   overflow-y: auto;
@@ -104,7 +118,8 @@ main {
   background-blend-mode: multiply;
   border-radius: 6px;
   width: 50%;
-  height: 100%; }
+  height: 100%;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2); }
   .team:hover {
     cursor: pointer; }
   @media (max-width: 600px) {
@@ -155,11 +170,18 @@ main {
       margin: .5em 1em 0 1em; } }
 
 header {
-  padding: 1em; }
+  padding: 1em;
+  margin: 1em 0; }
   header h1.title {
     margin: 0; }
   header p.sub {
     margin: 0; }
+
+footer {
+  margin: 1em 0; }
+  footer .container {
+    padding: 0 1em;
+    color: #595959; }
 
 .pop {
   z-index: -1000;
@@ -212,8 +234,15 @@ body {
   font-family: "signika", helvetica, arial, sans-serif;
   box-sizing: border-box;
   font-size: 16px;
+  line-height: 1.5em;
   font-weight: 400; }
 
 h2.title.white {
   color: white;
   text-transform: uppercase; }
+
+h1.title {
+  line-height: 1.3em; }
+
+a {
+  color: #2378bf; }
