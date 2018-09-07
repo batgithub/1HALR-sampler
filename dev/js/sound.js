@@ -34,7 +34,7 @@ var sounds = [
     {name:'💩 Jsuis pas une merde!!',file: 'SEB-jsuis-pas-une-merde',team:'seb'},
     {name:'Toujours deux versions différentes..',file: 'SEB-toujours-deux-versions-differentes',team:'seb'},
     {name:'Le micro onde c\'est une invention...',file: 'SEB-le-micro-onde-invention',team:'seb'},
-    {name:'🕵️ C\'est une agent que j\'ai retourné',file: 'SEB-agent-retourne',team:'seb'},
+    {name:'🕵️ C\'est un agent que j\'ai retourné',file: 'SEB-agent-retourne',team:'seb'},
     {name:'Régine, y\'a q\'toi qui me comprend',file: 'SEB-regine',team:'seb'},
     {name:'🤑Moi jsuis chaud mais on fait payer!',file: 'SEB-on-fait-payer',team:'seb'},
     {name:'Où est mon émission!',file: 'SEB-mon-emission',team:'seb'},
@@ -96,10 +96,11 @@ function playSound(id) {
       timer = setTimeout(
         function(){
           $(audioClick).parent().removeClass( "active" )
-          console.log('timeout');
         }, duration)
 
 
     }
 
 }
+
+console.log("N'hésite pas à contribuer au projet https://github.com/batgithub/1HALR-sampler");

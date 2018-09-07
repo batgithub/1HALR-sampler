@@ -10,15 +10,24 @@ header {
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
 main {
-  height: 500px;
   box-sizing: border-box;
+  .container.text {
+    padding: 1em;
+    flex-direction: column;
+  }
 
   .container {
     display: flex;
-    height: 100%;
     box-sizing: border-box;
 
     .team {
@@ -26,13 +35,19 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 30em;
 
       box-sizing: border-box;
     }
     @media (max-width: 600px) {
       /* On mobile */
       flex-direction: column;
+      height: 30em;
     }
   }
 
+}
+
+footer {
+  text-align: center;
 }
