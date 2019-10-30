@@ -1,5 +1,5 @@
 var pathSounds = "src/audio/"
-var animationDuration = 3000
+var animationDuration = 300
 var sounds = [
     {name:'le nom du son',path: pathSounds+'sdound',team:'mag'},
     {name:'le nom du son2',path:pathSounds+'sdound',team:'mag'},
