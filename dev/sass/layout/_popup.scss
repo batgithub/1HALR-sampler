@@ -1,5 +1,5 @@
 .pop {
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   .header {
       opacity: 0;
@@ -8,10 +8,25 @@
   .sounds {
     opacity: 0;
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-content: flex-start;
-    padding: 6em 1em 1em;
+
+    @media (max-width: 600px) {
+      /* On mobile */
+      justify-content: flex-start;
+      flex-direction: column;
+      align-content: flex-start;
+      padding: 6em 1em 1em;
+    }
+    @media (min-width: 601px) {
+      /* On desktop */
+      flex-wrap: wrap;
+      padding: 6em 0em;
+      .button {
+        margin: .5em 1em;
+      }
+    }
+
+
+
     .button {
       display: flex;
       align-self:flex-start;

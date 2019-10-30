@@ -14,6 +14,7 @@ $font: 'signika', helvetica, arial, sans-serif;
 @import "layout/popup";
 @import  "teamsMenu";
 @import  "header";
+@import  "footer";
 @import  "pop";
 @import  "buttons";
 
@@ -28,6 +29,7 @@ body {
   font-family: $font;
   box-sizing: border-box;
   font-size: 16px;
+  line-height: 1.5em;
   font-weight: 400;
 }
 
@@ -35,4 +37,13 @@ h2.title.white {
   color: white;
   text-transform: uppercase;
 
+}
+
+h1.title {
+  line-height: 1.3em;
+
+}
+
+a {
+  color: #2378bf;
 }

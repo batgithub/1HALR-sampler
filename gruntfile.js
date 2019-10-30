@@ -38,7 +38,7 @@ module.exports = function(grunt){
               {
                 expand: true,
                 cwd:'dev',
-                src: ['index.html','src/*'],
+                src: ['index.html','src/**/*'],
                 dest: 'docs/',
                 filter: 'isFile'
               },
@@ -61,7 +61,9 @@ module.exports = function(grunt){
             },
             files: {
               'dev/app.js': [
-                'dev/js/test1.js',
+                'dev/js/jquery.js',
+                'dev/js/popup.js',
+                'dev/js/sound.js'
               ]
             }
           },
@@ -71,7 +73,9 @@ module.exports = function(grunt){
             },
             files: {
               'docs/app.js': [
-                'dev/js/test1.js',
+                'dev/js/jquery.js',
+                'dev/js/popup.js',
+                'dev/js/sound.js'
               ]
             }
           }
@@ -91,7 +95,8 @@ module.exports = function(grunt){
             },
             js: {
               files: ['dev/js/**/*.js'],
-              tasks: ['uglify:dev']
+              tasks: ['uglify:dev'],
+              options: { spawn: false }
             },
             grunt: {
                 files: ['gruntfile.js'],

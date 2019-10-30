@@ -20,39 +20,60 @@ header {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  text-align: center; }
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px; }
 
 main {
-  height: 500px;
   box-sizing: border-box; }
+  main .container.text {
+    padding: 1em;
+    flex-direction: column; }
   main .container {
     display: flex;
-    height: 100%;
     box-sizing: border-box; }
     main .container .team {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 30em;
       box-sizing: border-box; }
     @media (max-width: 600px) {
       main .container {
         /* On mobile */
-        flex-direction: column; } }
+        flex-direction: column;
+        height: 30em; } }
+
+footer {
+  text-align: center; }
 
 .pop {
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
   .pop .header {
     opacity: 0;
     padding-top: 1em; }
   .pop .sounds {
     opacity: 0;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-content: flex-start;
-    padding: 6em 1em 1em; }
+    display: flex; }
+    @media (max-width: 600px) {
+      .pop .sounds {
+        /* On mobile */
+        justify-content: flex-start;
+        flex-direction: column;
+        align-content: flex-start;
+        padding: 6em 1em 1em; } }
+    @media (min-width: 601px) {
+      .pop .sounds {
+        /* On desktop */
+        flex-wrap: wrap;
+        padding: 6em 0em; }
+        .pop .sounds .button {
+          margin: .5em 1em; } }
     .pop .sounds .button {
       display: flex;
       align-self: flex-start; }
@@ -61,7 +82,8 @@ main {
   background-blend-mode: multiply;
   border-radius: 6px;
   width: 50%;
-  height: 100%; }
+  height: 100%;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2); }
   .team:hover {
     cursor: pointer; }
   @media (max-width: 600px) {
@@ -71,14 +93,14 @@ main {
 
 .bg-seb {
   background-blend-mode: multiply;
-  background: url("src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
+  background: url("./src/imgs/teamSeb.png"), linear-gradient(to right, #F81EFA, #805EFD);
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover; }
   @media (max-width: 600px) {
     .bg-seb {
       /* On mobile */
-      background: url("src/imgs/teamSeb.png"), linear-gradient(to bottom, #F81EFA, #805EFD);
+      background: url("./src/imgs/teamSeb.png"), linear-gradient(to bottom, #F81EFA, #805EFD);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover; } }
@@ -92,14 +114,14 @@ main {
 
 .bg-mag {
   background-blend-mode: multiply;
-  background: url("src/imgs/teamMag.png"), linear-gradient(to right, #805EFD, #0C9DFF);
+  background: url("./src/imgs/teamMag.png"), linear-gradient(to right, #805EFD, #0C9DFF);
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover; }
   @media (max-width: 600px) {
     .bg-mag {
       /* On mobile */
-      background: url("src/imgs/teamMag.png"), linear-gradient(to bottom, #805EFD, #0C9DFF);
+      background: url("./src/imgs/teamMag.png"), linear-gradient(to bottom, #805EFD, #0C9DFF);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover; } }
@@ -112,11 +134,18 @@ main {
       margin: .5em 1em 0 1em; } }
 
 header {
-  padding: 1em; }
+  padding: 1em;
+  margin: 1em 0; }
   header h1.title {
     margin: 0; }
   header p.sub {
     margin: 0; }
+
+footer {
+  margin: 1em 0; }
+  footer .container {
+    padding: 0 1em;
+    color: #595959; }
 
 .pop {
   z-index: -1000;
@@ -138,11 +167,11 @@ header {
 .button {
   padding: 1em 1.3em 1em 1em;
   margin-bottom: 1em;
-  text-transform: uppercase;
   background: white;
   border: none;
   border-radius: 6px;
-  font-size: 1em; }
+  font-size: 1em;
+  text-align: left; }
   .button:hover {
     cursor: pointer; }
   .button::before {
@@ -160,10 +189,17 @@ body {
   font-family: "signika", helvetica, arial, sans-serif;
   box-sizing: border-box;
   font-size: 16px;
+  line-height: 1.5em;
   font-weight: 400; }
 
 h2.title.white {
   color: white;
   text-transform: uppercase; }
+
+h1.title {
+  line-height: 1.3em; }
+
+a {
+  color: #2378bf; }
 
 /*# sourceMappingURL=style.css.map */

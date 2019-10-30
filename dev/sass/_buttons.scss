@@ -1,11 +1,12 @@
 .button {
   padding: 1em 1.3em 1em 1em;
   margin-bottom: 1em;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   background: white;
   border: none;
   border-radius: $radius;
   font-size: 1em;
+  text-align: left;
   &:hover {
     cursor: pointer;
   }
@@ -17,8 +18,19 @@
 }
 
 .button.active {
-
   &::before {
     content: url('src/imgs/stop.svg');
   }
 }
+
+// .button.loading{
+//   &::before {
+//     display: inline-block;
+//     content:'';
+//     background: url('src/imgs/loading.gif')no-repeat 0 0;
+//     background-size: 100%;
+//     width: 1.2em;
+//     height: 1.2em;
+//
+//   }
+// }
